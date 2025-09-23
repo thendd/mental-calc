@@ -1,75 +1,10 @@
-# Nuxt Minimal Starter
+# What is this?
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+I have a college entrance exam at the end of this year (November 30th) and the candidates are not allowed to use a calculator, therefore it is relatively important to be able to make simple calculations such as addition, subtraction, multiplication and division in a small amount of time. Becuase of that, I have created this website in order to train mental calculations and strategies to make them. Other websites are full of ads or require a paid subscription (crazy, right?), so I decided to make a simple yet useful one.
 
-## Setup
+# Features
+- It **must** provide basic mathematical operations such as addition, subtraction, multiplication and division;
+- It **must** throw errors when the user misses some calculation;
+- It **should** have a minimalist yet good looking UI.
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Therefore, it is an extremely basic application since I do not have enough time to add more and more features to it, even though I might do it in the future.
