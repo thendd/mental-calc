@@ -10,10 +10,10 @@
       </h2>
       <input
         v-model="givenAnswer"
-        :oninput="onChange"
         type="number"
         autofocus
         class="max-w-full"
+        @input="onChange"
       >
     </section>
   </main>
@@ -107,8 +107,13 @@ const currentOperation = ref<Operation>()
 
 const givenAnswer = ref<number | undefined>()
 
-const onChange = (event: InputEvent) => {
+const onChange = (event: Event) => {
   const { value } = event.target as HTMLInputElement
+  console.log(
+    Number(value) === currentOperation.value?.answer,
+    value,
+    currentOperation.value?.answer,
+  )
   if (Number(value) === currentOperation.value?.answer) {
     grade += currentOperation.value.worth
     currentOperation.value = newOperation()
