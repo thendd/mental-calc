@@ -5,7 +5,10 @@
       {{ currentOperation?.left }} {{ currentOperation?.sign }}
       {{ currentOperation?.right }} = x
     </h2>
-    <input v-model="givenAnswer" :oninput="onChange" />
+    <input
+      v-model="givenAnswer"
+      :oninput="onChange"
+    >
   </UMain>
 </template>
 
