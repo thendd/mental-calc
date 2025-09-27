@@ -5,10 +5,7 @@
       {{ currentOperation?.left }} {{ currentOperation?.sign }}
       {{ currentOperation?.right }} = x
     </h2>
-    <input
-      v-model="givenAnswer"
-      :oninput="onChange"
-    >
+    <input v-model="givenAnswer" :oninput="onChange" type="number" autofocus />
   </UMain>
 </template>
 
@@ -30,7 +27,7 @@ const generateRandomNumber = (min: number, max: number) => {
 }
 
 const newOperation = () => {
-  const operationSigns = ['+', '-', 'x', '/']
+  const operationSigns = ['+', '-', 'x']
   let left = 0
   let right = 0
   let answer = 0
@@ -43,6 +40,30 @@ const newOperation = () => {
 
     operationSign = operationSigns[generateRandomNumber(0, 1)] as string
     worth = 0.1
+  } else if (grade < 3) {
+    left = generateRandomNumber(0, 999)
+    right = generateRandomNumber(0, 999)
+
+    operationSign = operationSigns[generateRandomNumber(0, 1)] as string
+    worth = 0.3
+  } else if (grade < 5) {
+    left = generateRandomNumber(0, 20)
+    right = generateRandomNumber(0, 20)
+
+    operationSign = operationSigns[2] as string
+    worth = 0.5
+  } else if (grade < 8) {
+    left = generateRandomNumber(0, 200)
+    right = generateRandomNumber(0, 200)
+
+    operationSign = operationSigns[2] as string
+    worth = 0.8
+  } else {
+    left = generateRandomNumber(0, 999)
+    right = generateRandomNumber(0, 999)
+
+    operationSign = operationSigns[generateRandomNumber(0, 2)] as string
+    worth = 1
   }
 
   switch (operationSign) {
@@ -74,7 +95,6 @@ const givenAnswer = ref<number | undefined>()
 
 const onChange = (event: InputEvent) => {
   const { value } = event.target as HTMLInputElement
-  console.log(Number(value), currentOperation.value?.answer)
   if (Number(value) === currentOperation.value?.answer) {
     grade += currentOperation.value.worth
     currentOperation.value = newOperation()
