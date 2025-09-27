@@ -1,12 +1,14 @@
 <template>
-  <UHeader title="Mental math" />
-  <UMain>
+  <header>
+    <h1>Mental math</h1>
+  </header>
+  <main>
     <h2>
       {{ currentOperation?.left }} {{ currentOperation?.sign }}
       {{ currentOperation?.right }} = x
     </h2>
     <input v-model="givenAnswer" :oninput="onChange" type="number" autofocus />
-  </UMain>
+  </main>
 </template>
 
 <script setup lang="ts">
