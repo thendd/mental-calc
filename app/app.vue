@@ -1,13 +1,21 @@
 <template>
-  <header>
+  <header class="w-screen mt-4 flex text-center justify-center text-3xl">
     <h1>Mental math</h1>
   </header>
-  <main>
-    <h2>
-      {{ currentOperation?.left }} {{ currentOperation?.sign }}
-      {{ currentOperation?.right }} = x
-    </h2>
-    <input v-model="givenAnswer" :oninput="onChange" type="number" autofocus />
+  <main class="w-screen h-[80vh] flex text-center justify-center flex-col">
+    <section class="">
+      <h2 class="text-2xl">
+        {{ currentOperation?.left }} {{ currentOperation?.sign }}
+        {{ currentOperation?.right }}
+      </h2>
+      <input
+        v-model="givenAnswer"
+        :oninput="onChange"
+        type="number"
+        autofocus
+        class="max-w-full"
+      >
+    </section>
   </main>
 </template>
 
@@ -42,25 +50,29 @@ const newOperation = () => {
 
     operationSign = operationSigns[generateRandomNumber(0, 1)] as string
     worth = 0.1
-  } else if (grade < 3) {
+  }
+  else if (grade < 3) {
     left = generateRandomNumber(0, 999)
     right = generateRandomNumber(0, 999)
 
     operationSign = operationSigns[generateRandomNumber(0, 1)] as string
     worth = 0.3
-  } else if (grade < 5) {
+  }
+  else if (grade < 5) {
     left = generateRandomNumber(0, 20)
     right = generateRandomNumber(0, 20)
 
     operationSign = operationSigns[2] as string
     worth = 0.5
-  } else if (grade < 8) {
+  }
+  else if (grade < 8) {
     left = generateRandomNumber(0, 200)
     right = generateRandomNumber(0, 200)
 
     operationSign = operationSigns[2] as string
     worth = 0.8
-  } else {
+  }
+  else {
     left = generateRandomNumber(0, 999)
     right = generateRandomNumber(0, 999)
 

@@ -1,1 +1,25 @@
 @import 'tailwindcss';
+
+body {
+  @apply bg-zinc-950;
+}
+
+h1,
+h2 {
+  @apply text-zinc-50;
+}
+
+input {
+  @apply border-zinc-50 border rounded-sm p-2 text-zinc-50 text-xl mt-4;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
